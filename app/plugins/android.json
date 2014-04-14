@@ -3,7 +3,22 @@
         "installed": [],
         "uninstalled": []
     },
-    "config_munge": {},
-    "installed_plugins": {},
+    "config_munge": {
+        "AndroidManifest.xml": {
+            "/manifest": {
+                "<uses-permission android:name=\"android.permission.GET_ACCOUNTS\" />": 1
+            }
+        },
+        "config.xml": {
+            "/*": {
+                "<feature name=\"GetAccountsPlugin\"><param name=\"android-package\" value=\"com.bvarga.getaccounts.GetAccountsPlugin\" /></feature>": 1
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.bvarga.getaccounts": {
+            "PACKAGE_NAME": "com.bvarga.example"
+        }
+    },
     "dependent_plugins": {}
 }
