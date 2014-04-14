@@ -20,16 +20,16 @@ The example app is in the repo, however here is a writeup about how it was born.
   
     cordova plugin add ../../GetAccountsPlugin
     
-4. add some code to the app. Under www/js/index.js add this int onDeviceReady:
+4. add some code to the app. Under www/js/index.js add this into onDeviceReady:
 
-          getaccounts.get( function(result){
-          app.log('users: ' + JSON.stringify(result));
-        }, function(error){
-          app.log('error: ' + JSON.stringify(error));
-        });
+    getaccounts.get( function(result){
+      app.log('users: ' + JSON.stringify(result));
+    }, function(error){
+      app.log('error: ' + JSON.stringify(error));
+    });
 
   and add the log method, which looks like this:
-  
+    
     log: function(msg){
       console.log(msg);
       var item = document.createElement('p');
@@ -37,3 +37,4 @@ The example app is in the repo, however here is a writeup about how it was born.
       var element = document.getElementById('deviceready').appendChild(item);
     },
     
+
