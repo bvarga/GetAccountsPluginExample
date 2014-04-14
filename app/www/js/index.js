@@ -34,7 +34,20 @@ var app = {
     // function, we must explicity call 'app.receivedEvent(...);'
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        getaccounts.get( function(result){
+          app.log('users: ' + JSON.stringify(result));
+        }, function(error){
+          app.log('error: ' + JSON.stringify(error));
+        });
     },
+    
+    log: function(msg){
+      console.log(msg);
+      var item = document.createElement('p');
+      item.appendChild(document.createTextNode(msg));
+      var element = document.getElementById('deviceready').appendChild(item);
+    },
+    
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         var parentElement = document.getElementById(id);
